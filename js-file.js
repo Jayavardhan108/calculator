@@ -24,7 +24,11 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return a / b;
+    if (b === 0) {
+        alert("Ahaa!!!, not so easy Hacker, trying to crash my little calulator!. Enter a non-zero value to divide")
+        return;
+    }
+    return Math.round(a / b);
 }
 
 const result = document.querySelector(".result");
@@ -81,6 +85,8 @@ equalsButton.addEventListener("click", () => {
 
     operand2 = parseInt(resultValue.substring(operand2Index));
     result.textContent = operate(operator, operand1, operand2);
-
+    operand1 = undefined;
+    operand2 = undefined;
+    operator = undefined;
 })
 
